@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T46oRLBW5qU=",
+  "success": true,
+  "projectFilePath": "/home/nakano/Selenium/TestProject/TestProject.csproj",
+  "expectedPackageFiles": [
+    "/home/nakano/.nuget/packages/selenium.webdriver/4.24.0/selenium.webdriver.4.24.0.nupkg.sha512"
+  ],
+  "logs": []
+}
