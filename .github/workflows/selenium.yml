@@ -1,0 +1,29 @@
+name: Selenium # ワークフローの名前
+
+on: # トリガーのタイミング
+  push: # mainブランチにプッシュした時
+    branches:
+      - main
+  pull_request: # PRが作成・更新された時
+
+jobs: # 実行されるジョブ
+  selenium: # ジョブの名前
+    runs-on: ubuntu-latest # 最新のubuntu環境で実行
+
+    steps: # 実行の順番
+      - name: Checkout code # リポジトリからコードをチェックアウト
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core # .NET(C#)のセットアップ
+        uses: actions/setup-dotnet@v2
+
+      - name: Install dependencies # 必要な依存関係を読み込み
+        run: |
+          cd TestProject
+          dotnet restore
+
+      - name: Run Selenium tests # Seleniumのテストを実行
+        run: |
+          cd TestProject
+          dotnet build
+          dotnet run --project TestProject.csproj
