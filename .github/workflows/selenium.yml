@@ -19,11 +19,11 @@ jobs: # 実行されるジョブ
 
       - name: Install dependencies # 必要な依存関係を読み込み
         run: |
-          cd ../../TestProject # プロジェクトの場所
+          cd TestProject
           dotnet restore
 
       - name: Run Selenium tests # Seleniumのテストを実行
         run: |
-          cd ../../TestProject # プロジェクトの場所
+          cd TestProject
           dotnet build
           dotnet run --project TestProject.csproj
